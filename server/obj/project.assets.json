@@ -12540,11 +12540,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\lhs\\Courses\\Angular2\\LoginDemos\\AspNetNgLogin\\server\\server.csproj",
+      "projectUniqueName": "d:\\lhs\\Courses\\Angular2\\LoginDemos\\AspNetNgLogin\\server\\server.csproj",
       "projectName": "server",
-      "projectPath": "D:\\lhs\\Courses\\Angular2\\LoginDemos\\AspNetNgLogin\\server\\server.csproj",
+      "projectPath": "d:\\lhs\\Courses\\Angular2\\LoginDemos\\AspNetNgLogin\\server\\server.csproj",
       "packagesPath": "C:\\Users\\rick\\.nuget\\packages\\",
-      "outputPath": "D:\\lhs\\Courses\\Angular2\\LoginDemos\\AspNetNgLogin\\server\\obj\\",
+      "outputPath": "d:\\lhs\\Courses\\Angular2\\LoginDemos\\AspNetNgLogin\\server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
