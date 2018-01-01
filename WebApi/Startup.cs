@@ -32,7 +32,8 @@ namespace WebApi
         {
             services.AddCors();
             // add DI for DataContext
-            services.AddDbContext<DataContext>(x => x.UseInMemoryDatabase("TestDb"));
+            //services.AddDbContext<DataContext>(x => x.UseInMemoryDatabase("TestDb"));
+            services.AddDbContext<DataContext>(x => x.UseSqlServer("data source=.; database=Sample1; Integrated Security=true;"));
             services.AddMvc();
             services.AddAutoMapper();
 

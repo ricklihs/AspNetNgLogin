@@ -1,5 +1,8 @@
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace WebApi.Entities
 {
+    [Table("NgUsers")]
     public class User
     {
         public int Id { get;set; }
