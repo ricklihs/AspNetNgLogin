@@ -8,3 +8,13 @@ d:\lhs\Courses\Angular2\LoginDemos\AspNetNgLogin\WebApi\obj\Debug\netcoreapp2.0\
 d:\lhs\Courses\Angular2\LoginDemos\AspNetNgLogin\WebApi\obj\Debug\netcoreapp2.0\WebApi.AssemblyInfo.cs
 d:\lhs\Courses\Angular2\LoginDemos\AspNetNgLogin\WebApi\obj\Debug\netcoreapp2.0\WebApi.dll
 d:\lhs\Courses\Angular2\LoginDemos\AspNetNgLogin\WebApi\obj\Debug\netcoreapp2.0\WebApi.pdb
+c:\Users\rick\Desktop\Study\DEMOS\Angular\Angular2\LoginDemos\AspNetNgLogin\WebApi\obj\Debug\netcoreapp2.0\WebApi.csproj.CoreCompileInputs.cache
+c:\Users\rick\Desktop\Study\DEMOS\Angular\Angular2\LoginDemos\AspNetNgLogin\WebApi\obj\Debug\netcoreapp2.0\WebApi.AssemblyInfoInputs.cache
+c:\Users\rick\Desktop\Study\DEMOS\Angular\Angular2\LoginDemos\AspNetNgLogin\WebApi\obj\Debug\netcoreapp2.0\WebApi.AssemblyInfo.cs
+c:\Users\rick\Desktop\Study\DEMOS\Angular\Angular2\LoginDemos\AspNetNgLogin\WebApi\obj\Debug\netcoreapp2.0\WebApi.dll
+c:\Users\rick\Desktop\Study\DEMOS\Angular\Angular2\LoginDemos\AspNetNgLogin\WebApi\obj\Debug\netcoreapp2.0\WebApi.pdb
+c:\Users\rick\Desktop\Study\DEMOS\Angular\Angular2\LoginDemos\AspNetNgLogin\WebApi\bin\Debug\netcoreapp2.0\WebApi.deps.json
+c:\Users\rick\Desktop\Study\DEMOS\Angular\Angular2\LoginDemos\AspNetNgLogin\WebApi\bin\Debug\netcoreapp2.0\WebApi.runtimeconfig.json
+c:\Users\rick\Desktop\Study\DEMOS\Angular\Angular2\LoginDemos\AspNetNgLogin\WebApi\bin\Debug\netcoreapp2.0\WebApi.runtimeconfig.dev.json
+c:\Users\rick\Desktop\Study\DEMOS\Angular\Angular2\LoginDemos\AspNetNgLogin\WebApi\bin\Debug\netcoreapp2.0\WebApi.dll
+c:\Users\rick\Desktop\Study\DEMOS\Angular\Angular2\LoginDemos\AspNetNgLogin\WebApi\bin\Debug\netcoreapp2.0\WebApi.pdb

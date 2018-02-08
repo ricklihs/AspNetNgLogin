@@ -10,9 +10,11 @@ import { AlertService, AuthenticationService } from '../_services/index';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  // 1)
   model: any = {};
   loading = false;
   returnUrl: string;
+  // 2)
   constructor(
       private route: ActivatedRoute,
       private router: Router,
@@ -20,6 +22,7 @@ export class LoginComponent implements OnInit {
       private alertService: AlertService
      ) { }
 
+  // 3)
   ngOnInit() {
     // reset login status
     this.authenticationService.logout();
@@ -28,16 +31,30 @@ export class LoginComponent implements OnInit {
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
+  // 4)
   login() {
     this.loading = true;
     this.authenticationService.login(this.model.username, this.model.password)
-        .subscribe(
-          data => {
-              this.router.navigate([this.returnUrl]);
-          },
-          error => {
-              this.alertService.error('Username or password is incorrect');
-              this.loading = false;
-          });
+      // .subscribe (object) method
+      //   .subscribe({
+      //     next:   data => {
+      //             this.router.navigate([this.returnUrl]);
+      //         },
+      //     error:   error => {
+      //             this.alertService.error('Username or password is incorrect');
+      //             this.loading = false;
+      //         }
+      //   }
+      // )
+      .subscribe(
+        data => {
+                this.router.navigate([this.returnUrl]);
+            },
+        error => {
+                this.alertService.error('Username or password is incorrect');
+                this.loading = false;
+            }
+      )
+      ;
   }
 }

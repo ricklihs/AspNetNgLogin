@@ -7,8 +7,10 @@ import { AppConfig } from '../app.config';
 
 @Injectable()
 export class AuthenticationService {
+  // 1)
   constructor(private http: Http, private config: AppConfig) { }
 
+  // 2)
   login(username:  string, password: string) {
     return this.http.post(this.config.apiUrl + '/users/authenticate',
       { username: username, password: password })

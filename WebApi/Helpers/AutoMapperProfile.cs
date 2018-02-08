@@ -11,6 +11,8 @@ namespace WebApi.Helpers
         public AutoMapperProfile(){
             CreateMap<User,UserDto>();
             CreateMap<UserDto,User>();
+            CreateMap<Comment,CommentDto>();
+            CreateMap<CommentDto,Comment>();
         }
     }
 }

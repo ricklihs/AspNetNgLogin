@@ -12605,11 +12605,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\lhs\\Courses\\Angular2\\LoginDemos\\AspNetNgLogin\\WebApi\\WebApi.csproj",
+      "projectUniqueName": "c:\\Users\\rick\\Desktop\\Study\\DEMOS\\Angular\\Angular2\\LoginDemos\\AspNetNgLogin\\WebApi\\WebApi.csproj",
       "projectName": "WebApi",
-      "projectPath": "d:\\lhs\\Courses\\Angular2\\LoginDemos\\AspNetNgLogin\\WebApi\\WebApi.csproj",
+      "projectPath": "c:\\Users\\rick\\Desktop\\Study\\DEMOS\\Angular\\Angular2\\LoginDemos\\AspNetNgLogin\\WebApi\\WebApi.csproj",
       "packagesPath": "C:\\Users\\rick\\.nuget\\packages\\",
-      "outputPath": "d:\\lhs\\Courses\\Angular2\\LoginDemos\\AspNetNgLogin\\WebApi\\obj\\",
+      "outputPath": "c:\\Users\\rick\\Desktop\\Study\\DEMOS\\Angular\\Angular2\\LoginDemos\\AspNetNgLogin\\WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
