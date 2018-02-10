@@ -1,8 +1,8 @@
 using System;
-
+using WebApi.Entities;
 namespace WebApi.Dtos
 {
-    public class CommentDto
+    public class CommentDto:IComment
     {
         public int Id { get;set; }
         public int PostId { get;set; }

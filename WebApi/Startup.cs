@@ -66,6 +66,7 @@ namespace WebApi
 
             // 4) Configure DI for application services
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ICommentService, CommentService>();
         }
 
 

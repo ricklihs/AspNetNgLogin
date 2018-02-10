@@ -9,12 +9,12 @@ namespace WebApi.Services
     public interface ICommentService
     {
         // Comment Authenticate(string username, string password);
-        IEnumerable<Comment> GetAll();
-        Comment GetById(int Id);
-        Comment GetByPostId(int PostId);
-        Comment Create(int postId,string username,string email,string body);// default time
-        void Update(Comment comment);
-        void Delete(int id);
+         IEnumerable<Comment> GetAll();       
+         Comment GetById(int Id);
+         IEnumerable<Comment> GetByPostId(int PostId);
+         Comment Create(int postId,string username,string email,string body);// default time
+         void Update(Comment comment);
+         void Delete(int id);
     }
 
     public class CommentService : ICommentService
@@ -49,17 +49,16 @@ namespace WebApi.Services
         {
             return _context.Comments;
         }
-
         // 2)
         public Comment GetById(int id)
         {
             return _context.Comments.Find(id);
         }
 
-        // 3)
-        public Comment GetByPostId(int postId)
+        // 3) GetByPostId
+        public IEnumerable<Comment> GetByPostId(int postId)
         {
-            return _context.Comments.Find(postId);
+            return _context.Comments.Where(x=>x.PostId==postId);
         }
 
         // 4) Create
@@ -96,9 +95,16 @@ namespace WebApi.Services
 
             // update user properties
             // comment.Name = commentParam.Name; //update should not allow change name
-            comment.Email = commentParam.Email;
-            comment.Body = commentParam.Body;
-            comment.Time = commentParam.Time;
+
+            comment=new Comment{
+                Email=commentParam.Email,
+                Body = commentParam.Body,
+                Time = commentParam.Time
+            };
+
+            // comment.Email = commentParam.Email;
+            // comment.Body = commentParam.Body;
+            // comment.Time = commentParam.Time;
 
             _context.Comments.Update(comment);
             _context.SaveChanges();
@@ -117,4 +123,5 @@ namespace WebApi.Services
         }
 
     }
+    
 }

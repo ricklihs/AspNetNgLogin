@@ -17,7 +17,7 @@ using WebApi.Helpers;
 
 namespace WebApi.Controllers
 {
-    [Authorize]
+   // [Authorize]
     [Route("[controller]")]
     public class UsersController : Controller
     {
