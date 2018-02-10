@@ -26,17 +26,15 @@ namespace WebApi.Controllers
         private ICommentService _commentService;
         // private IUserService _userService;
         private IMapper _mapper;
-        private readonly AppSettings _appSettings;
+        //private readonly AppSettings _appSettings;
 
         // 2)
         public CommentsController(
             ICommentService commentService,
-            IMapper mapper,
-            IOptions<AppSettings> appSettings)
+            IMapper mapper)
         {
             _commentService = commentService;
             _mapper = mapper;
-            _appSettings = appSettings.Value;
         }
 
         // 3) GetAll
@@ -44,11 +42,9 @@ namespace WebApi.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            IEnumerable<IComment> comments =  _commentService.GetAll();
-            comments = CommentTrim(comments);      
+            IEnumerable<IComment> comments =  _commentService.GetAll();             
             var commentDtos = _mapper.Map<IList<CommentDto>>(comments);
-            return Ok(commentDtos);
-         
+            return Ok(commentDtos);     
         }
         
         // 6)
@@ -58,7 +54,6 @@ namespace WebApi.Controllers
         {
             IComment comment =  _commentService.GetById(id);
             IComment commentDto = _mapper.Map<CommentDto>(comment);
-            commentDto= CommentTrim(commentDto);
             return Ok(commentDto);
         }
 
@@ -67,8 +62,7 @@ namespace WebApi.Controllers
         public IActionResult GetByPostId(int postId)
         {
             IEnumerable<IComment> comments =  _commentService.GetByPostId(postId);
-
-            comments = CommentTrim(comments);      
+     
             var commentDtos = _mapper.Map<IList<CommentDto>>(comments);
             return Ok(commentDtos);
         }
@@ -76,9 +70,7 @@ namespace WebApi.Controllers
         [HttpGet("bypost")]
         public IActionResult GetAllOrderByPostId()
         {
-            IEnumerable<IComment> comments =  _commentService.GetAll().OrderBy(comment=>comment.PostId);
-            
-            comments = CommentTrim(comments);      
+            IEnumerable<IComment> comments =  _commentService.GetAll().OrderBy(comment=>comment.PostId);    
             var commentDtos = _mapper.Map<IList<CommentDto>>(comments);
             return Ok(commentDtos);
         }
@@ -113,29 +105,5 @@ namespace WebApi.Controllers
             _commentService.Delete(id);
             return Ok();
         }
-
-        // CommentTrime
-        public IComment CommentTrim(IComment item){
-                                          
-                item.Name=item.Name.Trim();
-                item.Body=item.Body.Trim();
-                item.Email=item.Email.Trim();           
-            
-               return item;
-        }
-        public IEnumerable<IComment> CommentTrim(IEnumerable<IComment> comments){
-
-             foreach (IComment item in comments)
-            {           
-                // IComment  item1=CommentTrim(item);
-                
-                item.Name=item.Name.Trim();
-                item.Body=item.Body.Trim();
-                item.Email=item.Email.Trim();           
-            }
-                
-            return comments;
-        }
-        
     }
 }

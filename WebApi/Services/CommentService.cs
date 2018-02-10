@@ -9,11 +9,11 @@ namespace WebApi.Services
     public interface ICommentService
     {
         // Comment Authenticate(string username, string password);
-         IEnumerable<Comment> GetAll();       
-         Comment GetById(int Id);
-         IEnumerable<Comment> GetByPostId(int PostId);
-         Comment Create(int postId,string username,string email,string body);// default time
-         void Update(Comment comment);
+         IEnumerable<IComment> GetAll();       
+         IComment GetById(int Id);
+         IEnumerable<IComment> GetByPostId(int PostId);
+         IComment Create(int postId,string username,string email,string body);// default time
+         void Update(IComment comment);
          void Delete(int id);
     }
 
@@ -45,26 +45,26 @@ namespace WebApi.Services
         // }
 
         // 1)
-        public IEnumerable<Comment> GetAll()
+        public IEnumerable<IComment> GetAll()
         {
-            return _context.Comments;
+            return CommentTrim(_context.Comments);
         }
         // 2)
-        public Comment GetById(int id)
+        public IComment GetById(int id)
         {
-            return _context.Comments.Find(id);
+            return CommentTrim(_context.Comments.Find(id));
         }
 
         // 3) GetByPostId
-        public IEnumerable<Comment> GetByPostId(int postId)
+        public IEnumerable<IComment> GetByPostId(int postId)
         {
-            return _context.Comments.Where(x=>x.PostId==postId);
+            return CommentTrim(_context.Comments.Where(x=>x.PostId==postId));
         }
 
         // 4) Create
         // public Comment Create(int PostId,string username,string email,string body)
           
-        public Comment Create(int postId,string username,string email,string body)
+        public IComment Create(int postId,string username,string email,string body)
         {
            // validation  maybe use user.Username
            if (string.IsNullOrWhiteSpace(username))
@@ -86,7 +86,7 @@ namespace WebApi.Services
         }
 
         // 5) Update Comment (int id,int postId,string username,string email,string body)
-        public void Update(Comment commentParam)
+        public void Update(IComment commentParam)
         {
             var comment = _context.Comments.Find(commentParam.Id);
 
@@ -120,6 +120,28 @@ namespace WebApi.Services
                 _context.Comments.Remove(comment);
                 _context.SaveChanges();
             }
+        }
+          // CommentTrime
+        public IComment CommentTrim(IComment item){
+                                            
+                item.Name=item.Name.Trim();
+                item.Body=item.Body.Trim();
+                item.Email=item.Email.Trim();           
+            
+                return item;
+        }
+        public IEnumerable<IComment> CommentTrim(IEnumerable<IComment> comments){
+
+                foreach (IComment item in comments)
+            {           
+                // IComment  item1=CommentTrim(item);
+                
+                item.Name=item.Name.Trim();
+                item.Body=item.Body.Trim();
+                item.Email=item.Email.Trim();           
+            }
+                
+            return comments;
         }
 
     }
