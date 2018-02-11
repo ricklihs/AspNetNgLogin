@@ -75,6 +75,8 @@ namespace WebApi.Controllers
             return Ok(commentDtos);
         }
 
+
+
         // 7) Update
         // [HttpPut("comments/{id}")]
         [HttpPut("{id}")]
@@ -105,5 +107,28 @@ namespace WebApi.Controllers
             _commentService.Delete(id);
             return Ok();
         }
+
+        // 4)
+        [AllowAnonymous]
+        [HttpPost] 
+        // public IComment Create(int postId,string username,string email,string body)
+        public IActionResult Create([FromBody]CommentDto commentDto)
+        {
+            // map dto to entity
+            var comment = _mapper.Map<Comment>(commentDto);
+
+            try
+            {
+                // save
+                _commentService.Create(commentDto.PostId, commentDto.Name,commentDto.Email,commentDto.Body);
+                return Ok();
+            }
+            catch(AppException ex)
+            {
+                // return error message if there was an exception 
+                return BadRequest(ex.Message);
+            }
+        }
+
     }
 }
